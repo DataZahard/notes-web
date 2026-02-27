@@ -1,0 +1,7 @@
+express
+jsonwebtoken
+bcryptjs
+nedb-promises
+cors
+dotenv
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | Backend Intern Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>API Manager</h1>
+            <div id="user-info" class="hidden">
+                <span id="username-display"></span>
+                <button onclick="logout()" class="btn-sm">Logout</button>
+            </div>
+        </header>
+
+        <section id="auth-section">
+            <div class="card">
+                <h2 id="auth-title">Login</h2>
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username">
+                    <input type="password" id="password" placeholder="Password">
+                    <select id="role">
+                        <option value="user">User Role</option>
+                        <option value="admin">Admin Role</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button onclick="handleAuth('login')" id="login-btn">Login</button>
+                    <button onclick="handleAuth('register')" class="btn-outline">Register</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-content" class="hidden">
+            <div class="card">
+                <h3>Create New Note</h3>
+                <input type="text" id="note-title" placeholder="Note Title">
+                <textarea id="note-content" placeholder="Content..."></textarea>
+                <button onclick="createNote()">Save Note</button>
+            </div>
+
+            <div class="notes-header">
+                <h3>Your Notes</h3>
+                <button onclick="fetchNotes()" class="btn-sm">Refresh List</button>
+            </div>
+            <div id="notes-list"></div>
+        </section>
+
+        <div id="message-toast" class="toast hidden"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

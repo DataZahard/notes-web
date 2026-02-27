@@ -1,0 +1,35 @@
+{
+  "info": {
+    "title": "Notes-Web API Documentation",
+    "description": "Secure Backend API for Auth and Note Management",
+    "version": "1.0.0"
+  },
+  "endpoints": [
+    {
+      "method": "POST",
+      "path": "/api/v1/register",
+      "description": "Register a new user.",
+      "body": { "username": "string", "password": "string", "role": "user/admin" }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/login",
+      "description": "Authenticate user and receive a JWT token.",
+      "body": { "username": "string", "password": "string" },
+      "response": { "token": "JWT_STRING" }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes",
+      "description": "Retrieve all notes for the authenticated user.",
+      "headers": { "Authorization": "Bearer <token>" }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/notes",
+      "description": "Create a new note.",
+      "headers": { "Authorization": "Bearer <token>" },
+      "body": { "content": "string" }
+    }
+  ]
+}
